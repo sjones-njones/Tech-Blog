@@ -1,0 +1,55 @@
+  <div class='add-post-container'>
+    <h2>
+Write your new blog post here!    </h2>
+    <form class='new-post-form'>
+
+      <label for='title'>
+        Title:
+      </label>
+      <br />
+      <textarea id='title' name='title' rows='2' cols='30'>
+        {{title}}
+      </textarea>
+      <br />
+
+
+      <label for='post'>
+        Post:
+      </label>
+      <br />
+      <textarea id='post' name='post' rows='5' cols='30'>
+        {{post}}
+      </textarea>
+      <br />
+
+      
+      <br />
+      <button type='submit' value='Submit'>
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<!-- This is the form for adding a new post -->
+{{!-- the only place js file is called --}}
+<section class="blog container">
+  <div class='row'>
+    {{#with user.userName}}
+    {{#each blog as |blog|}}
+    <div class='blog bg-light col-md-3'>
+      <p>
+        {{blog.title}},
+        <br>
+        {{blog.post}}
+      </p>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>No posts for this user</p>
+    {{/with}}
+  </div>
+  </div>
+  </div>
+  </div>
+</section>
+<script src='/js/add-dish.js'></script>
